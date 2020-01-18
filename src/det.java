@@ -1,19 +1,13 @@
-
 public class det {
+    public static int nrOfMult;
+    
+    //Berechnung mit 1. Normalform
+    public static double calcDet(double[][] A){
+        return Double.NaN; // Durch Ihren Code ersetzen!
+    }
 
-	public det() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public static double calcDetRecursiv(double[][] A) {
-		
-	}
-	public static double calcDet(double[][] A) {
-		
-	}
+    //Rekursive Berechnung mit Def. L.4.1.1 Skript
+    public static double calcDetRec(double[][] A){
+        return Double.NaN; // Durch Ihren Code ersetzen!
+    }
 }
