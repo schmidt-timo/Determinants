@@ -7,7 +7,7 @@ Schreiben Sie in der Klasse det im Projekt Determinanten die Methoden
     
 calcDetRecursiv soll die Determinante der n x n -Matrix A rekursiv wie in Definition L.4.1.1 des Skripts berechnen, calcDet soll die Berechnung mit Hilfe der 1. Normalform von A ausführen. Testen Sie Ihre Methoden! In der Klasse testDet finden Sie dazu die Methoden
 
-    public static double[][] readMatrixFromFile(String filename)und 
+    public static double[][] readMatrixFromFile(String filename) und 
     public static void showMatrix(double[][] M,int nrOfDigits),
     
 mit denen Sie eine Matrix aus der Datei Test.txt einlesen und ausgeben können. (Zwischen den Zahlen müssen sich mindestens 2 und höchstens 3 Leerzeichen befinden.) Testen Sie mit weiteren Beispielen!
