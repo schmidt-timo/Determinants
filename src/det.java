@@ -1,3 +1,8 @@
+/*
+    @author: Marie Lencer, Timo Schmidt, Lena Zellin
+    @version: 2020-01-24
+ */
+
 public class det {
     public static int nrOfMult;
     
