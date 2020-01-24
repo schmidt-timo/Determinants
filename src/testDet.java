@@ -87,4 +87,8 @@ public class testDet {
             System.out.println(s);
         }
     }
+
+    public double[][] getA() {
+        return A;
+    }
 }
