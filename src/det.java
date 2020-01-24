@@ -79,6 +79,11 @@ public class det {
 
         System.out.println(calcDetRec(test));
 
+        // Test 1 rekursiv
+        testDet A = new testDet("src/Test.txt");
+        double[][] matrixA = A.getA();
+        System.out.println(calcDetRec(matrixA));
+
     }
 
 }

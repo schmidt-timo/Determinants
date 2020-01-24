@@ -14,6 +14,7 @@ public class testDet {
     public testDet(String filename){
         test(filename);
     }
+
     public void test(String filename){
         A = readMatrixFromFile(filename);
         if (A==null) return;
@@ -90,5 +91,17 @@ public class testDet {
 
     public double[][] getA() {
         return A;
+    }
+
+    public static void main(String[] args) {
+
+        // Test 1
+        testDet A = new testDet("src/Test.txt");
+
+        System.out.println("----------------------------------");
+
+        // Test 2
+        testDet B = new testDet("src/Test1.txt");
+
     }
 }
