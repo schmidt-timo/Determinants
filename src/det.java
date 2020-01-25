@@ -6,13 +6,16 @@
 public class det {
 	public static int nrOfMult;
 
-	// Berechnung mit 1. Normalform
+	// Berechnung der Determinante mit 1. Normalform
 	public static double calcDet(double[][] A) {
+		//Normalform von A berechnen 
 		firstNormalForm(A);
 		
 		double det = 1;
 		for (int i = 0; i < A.length; i++) {
+			//Alle Zahlen der Diagonale multiplizieren
 			det *= A[i][i];
+			//Anzahl der Multiplikationen zählen
 			nrOfMult++;
 		}
 		
@@ -24,16 +27,16 @@ public class det {
 		
 		//Anzahl der Spalten
 		for (int j = 0; j < A.length; j++) {
-			//Anzahl der Zeilen
+			//Anzahl der verbleibenden Zeilen
 			for (int i = j+1; i < A.length; i++) {
 				//Zahlen in der Diagonale
 				double a = A[j][j];
 				//Faktor zum berechnen der Nullen in der j-ten Spalte
 				double factor = A[i][j] / a;
-				
 				//Subtraktion der Zeilen
 				for (int k = 0; k < A.length; k++) {
 					A[i][k] = A[i][k] - factor*A[j][k];
+					//Multipilkationen zählen
 					nrOfMult++;
 				}
 			}
