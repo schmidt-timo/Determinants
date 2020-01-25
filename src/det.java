@@ -11,12 +11,52 @@ public class det {
         return Double.NaN; // Durch Ihren Code ersetzen!
     }
 
+    // Source: http://professorjava.weebly.com/matrix-determinant.html
+    public static double calcDetRec2(double[][] A) {
+
+        // Länge der Matrix (Anzahl Spalten)
+        int len = A.length;
+
+        // Determinate initialisieren
+        int det = 0;
+
+        // Base case / Termination statement
+        if (len == 1)
+            return A[0][0];
+
+        // Durch die Spalten der Matrix iterieren
+        for (int i = 0; i < len; i++) {
+
+            // Teilmatrix initialisieren
+            double[][] partial = new double[len-1][len-1];
+
+            // Teilmatrix erstellen
+            for (int j = 1; j < len; j++) {
+                for (int k = 0; k < len; k++) {
+                    if (k < i)
+                        partial[j-1][k] = A[j][k];
+                    else if (k > i) {
+                        partial[j-1][k-1] = A[j][k];
+                    }
+                }
+            }
+
+            // Vorzeichen festlegen
+            int sign = i % 2 == 0 ? 1 : -1;
+
+            // Rekursiver Aufruf der Methode mit der Teilmatrix
+            det+= sign * A[0][i] * calcDetRec2(partial);
+
+        }
+        return det;
+    }
+
     //Rekursive Berechnung mit Def. L.4.1.1 Skript
     public static double calcDetRec(double[][] A) {
         // Länge der Matrix A bestimmen
         int len = A.length;
 
-        // überprüfen, ob Matrix größer als ein Eintrag ist
+        // Base case: Beende die Rekursion, wenn
         if (len == 1)
             return A[0][0];
         else {
@@ -82,7 +122,7 @@ public class det {
         // Test 1 rekursiv
         testDet A = new testDet("src/Test.txt");
         double[][] matrixA = A.getA();
-        System.out.println(calcDetRec(matrixA));
+        System.out.println(calcDetRec2(matrixA));
 
     }
 
