@@ -13,6 +13,7 @@ public class det {
 		double det = 1;
 		for (int i = 0; i < A.length; i++) {
 			det *= A[i][i];
+			nrOfMult++;
 		}
 		
 		return det;
@@ -33,6 +34,7 @@ public class det {
 				//Subtraktion der Zeilen
 				for (int k = 0; k < A.length; k++) {
 					A[i][k] = A[i][k] - factor*A[j][k];
+					nrOfMult++;
 				}
 			}
 		}
