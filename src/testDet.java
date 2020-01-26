@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class testDet {
     public double[][] A;
     public int nrOfDigits;
-    
+
     public testDet(String filename){
         test(filename);
     }
@@ -23,14 +23,17 @@ public class testDet {
             return;
         }
         nrOfDigits = 1;
-        
+
         System.out.println("A:");
         showMatrix(A, nrOfDigits);
         System.out.println();
-        
+
         det.nrOfMult = 0;
+        det.nrOfDiv = 0;
         System.out.println("det(A) = "+det.calcDet(A));
         System.out.println("Anzahl der Multiplikationen: "+det.nrOfMult);
+        System.out.println("Anzahl der Divisionen: "+det.nrOfDiv);
+
     }
 
     //Liest die quadratische Matrix aus einer Textdatei; s. Programmieraufgaben.pdf bezüglich des Formats.
@@ -44,7 +47,7 @@ public class testDet {
                 line = br.readLine();
             }
             br.close();
-            
+
             String[] parts = stringList.get(0).split("  ");
             int m = stringList.size(), n = parts.length;
             double[][] M = new double[m][n];
@@ -60,7 +63,7 @@ public class testDet {
         }
     }
 
-    //Schreibt die Matrix M in die Konsole; die Koeffizienten werden auf nrOfDigits Stellen gerundet. 
+    //Schreibt die Matrix M in die Konsole; die Koeffizienten werden auf nrOfDigits Stellen gerundet.
     public void showMatrix(double[][] M, int nrOfDigits){
         int m = M.length;
         int n = M[0].length;
@@ -69,7 +72,7 @@ public class testDet {
         for (int j=0; j<n; j++){
             for (int i=0; i<m; i++){
                 if (M[i][j]>max) max = M[i][j];
-                //if (M[i][j]<0.0) hasNoNegativeEntry = false; 
+                //if (M[i][j]<0.0) hasNoNegativeEntry = false;
             }
         }
         int l;
@@ -83,7 +86,7 @@ public class testDet {
         for (int i=0; i<m; i++){
             s = "";
             for (int j=0; j<n; j++){
-                s = s+String.format(f, M[i][j]);    
+                s = s+String.format(f, M[i][j]);
             }
             System.out.println(s);
         }

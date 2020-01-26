@@ -4,36 +4,41 @@
  */
 
 public class det {
-	public static int nrOfMult;
+	public static long nrOfMult;
+	public static int nrOfDiv;
 
-	// Berechnung mit 1. Normalform
+	// Berechnung der Determinante mit 1. Normalform
 	public static double calcDet(double[][] A) {
+		// Normalform von A berechnen
 		firstNormalForm(A);
-		
+
 		double det = 1;
 		for (int i = 0; i < A.length; i++) {
+			// Alle Zahlen der Diagonale multiplizieren
 			det *= A[i][i];
+			// Anzahl der Multiplikationen zählen
 			nrOfMult++;
 		}
-		
+
 		return det;
 	}
 
-	//Umformung von A in die erste Normalform
+	// Umformung von A in die erste Normalform
 	public static void firstNormalForm(double[][] A) {
-		
-		//Anzahl der Spalten
+
+		// Anzahl der Spalten
 		for (int j = 0; j < A.length; j++) {
-			//Anzahl der Zeilen
-			for (int i = j+1; i < A.length; i++) {
-				//Zahlen in der Diagonale
+			// Anzahl der verbleibenden Zeilen
+			for (int i = j + 1; i < A.length; i++) {
+				// Zahlen in der Diagonale
 				double a = A[j][j];
-				//Faktor zum berechnen der Nullen in der j-ten Spalte
+				// Faktor zum berechnen der Nullen in der j-ten Spalte
 				double factor = A[i][j] / a;
-				
-				//Subtraktion der Zeilen
+				nrOfDiv++;
+				// Subtraktion der Zeilen
 				for (int k = 0; k < A.length; k++) {
-					A[i][k] = A[i][k] - factor*A[j][k];
+					A[i][k] = A[i][k] - factor * A[j][k];
+					// Multipilkationen zählen
 					nrOfMult++;
 				}
 			}
@@ -44,7 +49,7 @@ public class det {
 	// Source: http://professorjava.weebly.com/matrix-determinant.html
 	public static double calcDetRec(double[][] A) {
 
-		// Länge der Matrix (Anzahl Spalten)
+		// LÃ¤nge der Matrix (Anzahl Spalten)
 		int len = A.length;
 
 		// Determinate initialisieren
@@ -76,6 +81,7 @@ public class det {
 
 			// Rekursiver Aufruf der Methode mit der Teilmatrix
 			det += sign * A[0][i] * calcDetRec(partial);
+			nrOfMult++;
 
 		}
 		return det;
@@ -86,11 +92,42 @@ public class det {
 		double[][] test = { // ergibt det = -6
 				{ 1, 2, 0 }, { 2, 1, 3 }, { 1, 3, 1 }, };
 
+		// Test 1 - 5x5 Matrix
+		testDet A = new testDet("src/Test.txt");
+
+		System.out.println("----------------------------------");
+
+		// Test 2 - nicht quadratisch
+		testDet B = new testDet("src/Test1.txt");
+
+		System.out.println("----------------------------------");
+
+		// Test 3 - 9x9 Matrix
+		testDet C = new testDet("src/Test2.txt");
+
+		System.out.println("----------------------------------");
+
+		// Test 4 - 5x5 Matrix mit teilweise negativen Zahlen
+		testDet D = new testDet("src/Test3.txt");
+
+		System.out.println("----------------------------------");
+
+		// Test 5 - 3x3 nur negative Zahlen
+		testDet E = new testDet("src/Test4.txt");
+
+		System.out.println("----------------------------------");
+
+		// Test 6 - 4x4 Einheitsmatrix
+		testDet F = new testDet("src/Test5.txt");
+
+		System.out.println("----------------------------------");
+
+		// Test 7 - 4x4 Hilbermatrix
+		testDet G = new testDet("src/Test6.txt");
+
 		System.out.println(calcDetRec(test));
 		firstNormalForm(test);
 
-		// Test 1 rekursiv
-		testDet A = new testDet("src/Test.txt");
 		System.out.println(calcDet(test));
 		double[][] matrixA = A.getA();
 		System.out.println(calcDetRec(matrixA));
