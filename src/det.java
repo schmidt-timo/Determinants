@@ -92,37 +92,37 @@ public class det {
 		double[][] test = { // ergibt det = -6
 				{ 1, 2, 0 }, { 2, 1, 3 }, { 1, 3, 1 }, };
 
-		// Test 1 - 5x5 Matrix
+		// Test 0 - 5x5 Matrix
 		testDet A = new testDet("src/Test.txt");
 
 		System.out.println("----------------------------------");
 
-		// Test 2 - nicht quadratisch
+		// Test 1 - nicht quadratisch
 		testDet B = new testDet("src/Test1.txt");
 
 		System.out.println("----------------------------------");
 
-		// Test 3 - 9x9 Matrix
+		// Test 2 - 9x9 Matrix
 		testDet C = new testDet("src/Test2.txt");
 
 		System.out.println("----------------------------------");
 
-		// Test 4 - 5x5 Matrix mit teilweise negativen Zahlen
+		// Test 3 - 5x5 Matrix mit teilweise negativen Zahlen
 		testDet D = new testDet("src/Test3.txt");
 
 		System.out.println("----------------------------------");
 
-		// Test 5 - 3x3 nur negative Zahlen
+		// Test 4 - 3x3 nur negative Zahlen
 		testDet E = new testDet("src/Test4.txt");
 
 		System.out.println("----------------------------------");
 
-		// Test 6 - 4x4 Einheitsmatrix
+		// Test 5 - 4x4 Einheitsmatrix
 		testDet F = new testDet("src/Test5.txt");
 
 		System.out.println("----------------------------------");
 
-		// Test 7 - 4x4 Hilbermatrix
+		// Test 6 - 4x4 Hilbertmatrix
 		testDet G = new testDet("src/Test6.txt");
 
 		System.out.println(calcDetRec(test));
