@@ -128,7 +128,7 @@ public class testDet {
 
         System.out.println("----------------------------------");
 
-        // Test 7 - 4x4 Hilbermatrix
+        // Test 7 - 4x4 Hilbertmatrix
         testDet G = new testDet("src/Test6.txt");
 
     }
