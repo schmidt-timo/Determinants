@@ -95,28 +95,13 @@ public class testDet {
 
     public static void main(String[] args) {
 
-        // Test 1 (5x5 positiv)
+        // Test 1
         testDet A = new testDet("src/Test.txt");
 
         System.out.println("----------------------------------");
 
-        // Test 2 (nicht quadratisch)
+        // Test 2
         testDet B = new testDet("src/Test1.txt");
-
-        System.out.println("----------------------------------");
-
-        // Test 3 (9x9 Matrix positiv)
-        testDet C = new testDet("src/Test2.txt");
-
-        System.out.println("----------------------------------");
-
-        // Test 4 (5x5 positiv und negativ)
-        testDet D = new testDet("src/Test3.txt");
-
-        System.out.println("----------------------------------");
-
-        // Test 5 (3x3 negativ)
-        testDet E = new testDet("src/Test4.txt");
 
     }
 }
