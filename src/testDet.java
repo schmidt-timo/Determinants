@@ -95,28 +95,38 @@ public class testDet {
 
     public static void main(String[] args) {
 
-        // Test 1 (5x5 positiv)
+        // Test 1 - 5x5 Matrix
         testDet A = new testDet("src/Test.txt");
 
         System.out.println("----------------------------------");
 
-        // Test 2 (nicht quadratisch)
+        // Test 2 - nicht quadratisch
         testDet B = new testDet("src/Test1.txt");
 
         System.out.println("----------------------------------");
 
-        // Test 3 (9x9 Matrix positiv)
+        // Test 3 - 9x9 Matrix
         testDet C = new testDet("src/Test2.txt");
 
         System.out.println("----------------------------------");
 
-        // Test 4 (5x5 positiv und negativ)
+        // Test 4 - 5x5 Matrix mit teilweise negativen Zahlen
         testDet D = new testDet("src/Test3.txt");
 
         System.out.println("----------------------------------");
 
-        // Test 5 (3x3 negativ)
+        // Test 5 - 3x3 nur negative Zahlen
         testDet E = new testDet("src/Test4.txt");
+
+        System.out.println("----------------------------------");
+
+        // Test 6 - 4x4 Einheitsmatrix
+        testDet F = new testDet("src/Test5.txt");
+
+        System.out.println("----------------------------------");
+
+        // Test 7 - 4x4 Hilbermatrix
+        testDet G = new testDet("src/Test6.txt");
 
     }
 }
