@@ -1,5 +1,7 @@
 # Determinants
 
+Aufgabenstellung:
+
 Schreiben Sie in der Klasse det im Projekt Determinanten die Methoden 
 
     public static double calcDetRecursiv(double[][] A) und
